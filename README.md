@@ -6,7 +6,7 @@ Started: 2024-09-08
 
 This is a simple and relatively stupid database to hold JSON documents.
 
-Primary functions:
+## Primary functions:
 
 1. Register a JSON document ==> assigns a unique ID
 
@@ -17,3 +17,7 @@ Primary functions:
     * Some day bother to implement SQL queries?
 
 The JSON objects will, for now, be stored in an ASCII file.  Starting the database will parse the file and load all of the items into memory.  Checkpointing or exiting will rewrite the ASCII file.
+
+## Assumptions:
+
+1. Each "record" in the database will be stored as a single ASCII string
