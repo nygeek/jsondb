@@ -10,6 +10,8 @@ This is a simple and relatively stupid database to hold JSON documents.
 
 1. Register a JSON document ==> assigns a unique ID
 
+1. Update a JSON document (existing ID and new document)
+
 1. Retrieve a JSON document by unique ID ==> JSON Document
 
 1. Search the repository for documents that match a query
@@ -21,3 +23,5 @@ The JSON objects will, for now, be stored in an ASCII file.  Starting the databa
 ## Assumptions:
 
 1. Each "record" in the database will be stored as a single ASCII string
+
+1. We should probably include an update count along with the unique ID.
