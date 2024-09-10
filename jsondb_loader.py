@@ -36,7 +36,11 @@ class JDB_Loader:
         """Actually read and parse the JSON documents from the file"""
         line = self.fd.readline()
         while line:
-            print(f"line: '{line}'")
+            if line[0] != "#":
+                # not a comment ... parse it
+                print(f"line: '{line}'")
+                jrecord = json.loads(line)
+                print(f"i{json.dumps(jrecord, indent=2)}")
             line = self.fd.readline()	
 
 
