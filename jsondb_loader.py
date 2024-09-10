@@ -32,15 +32,21 @@ class JDB_Loader:
         return _result
 
 
+    def dump(self):
+        """ dump self.jdb """
+        print(self.jdb)
+
+
     def load(self):
         """Actually read and parse the JSON documents from the file"""
         line = self.fd.readline().strip()
         while line:
             if line[0] != "#":
-                # not a comment and not empty ... parse it
-                print(f"line: '{line}'")
+                # not a comment empty ... parse it
+                # print(f"line: '{line}'")
                 jrecord = json.loads(line)
                 print(f"{json.dumps(jrecord, indent=2)}")
+                self.jdb.append(jrecord)
             line = self.fd.readline()	
 
 
@@ -49,6 +55,8 @@ def main():
     print("main()")
     loader = JDB_Loader("sample_1.jdb")
     loader.load()
+    print("loaded.")
+    loader.dump()
     
 
 if __name__ == "__main__":
