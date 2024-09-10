@@ -26,11 +26,13 @@ help:
 	echo "DATE: " ${DATE}
 
 PYTHON_SOURCE = \
+	jsondb_loader.py \
 	trace_debug.py
 
 SOURCE = \
 	 ${PYTHON_SOURCE} \
 	 Makefile \
+	 sample_1.jdb \
 	 .gitignore \
 	 README.md
 
