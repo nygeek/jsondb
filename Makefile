@@ -54,7 +54,7 @@ pylint:
 lint: pylint
 
 test:
-	${PYTHON} cnc_shell.py
+	${PYTHON} jsondb_loader.py
 
 listings:\
 	listing-trace_debug.pdf

@@ -47,13 +47,13 @@ class JDB_Loader:
         line = self.fd.readline().strip()
         while line:
             if line[0] != "#":
-                count += 1
+                print(f"[{count}]")
                 # not a comment empty ... parse it
                 # print(f"line: '{line}'")
                 jrecord = json.loads(line)
                 # print(f"{json.dumps(jrecord, indent=2)}")
-                print(f"[{count}]]")
                 self.jdb.append(jrecord)
+                count += 1
             line = self.fd.readline()	
 
 
