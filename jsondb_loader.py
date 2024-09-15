@@ -10,6 +10,11 @@
 
 from trace_debug import DebugTrace
 
+# Python public libraries
+import sys
+import argparse
+
+# jsondb libraries
 import json
 
 class JDB_Loader:
@@ -59,11 +64,22 @@ class JDB_Loader:
 
 def main():
     """Main - unit test goes here."""
-    print("main()")
-    loader = JDB_Loader("sample_1.jdb")
-    loader.load()
-    print("loaded.")
-    loader.dump()
+    program_name = sys.argv[0]
+    print(f"program_name: {program_name}")
+    parser = argparse.ArgumentParser(description='Load a JSONDB file.')
+    parser.add_argument(
+            "filename",
+            nargs='*',
+            type=str,
+            help="name the file to load"
+            )
+    args = parser.parse_args()
+    for fn in args.filename:
+        print(f"loading {fn} ...")
+        loader = JDB_Loader(fn)
+        loader.load()
+        print("loaded.")
+        loader.dump()
     
 
 if __name__ == "__main__":

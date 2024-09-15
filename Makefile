@@ -54,7 +54,7 @@ pylint:
 lint: pylint
 
 test:
-	${PYTHON} jsondb_loader.py
+	${PYTHON} jsondb_loader.py sample_1.jdb
 
 listings:\
 	listing-trace_debug.pdf
