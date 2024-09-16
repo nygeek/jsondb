@@ -16,7 +16,7 @@ This is a simple and relatively stupid database to hold JSON documents.
 
 1. Search the repository for documents that match a query
     * The query takes the form of a JSON object containing a list of attribute-value pairs to be matched.
-    * Some day bother to implement SQL queries?
+    * Some day implement SQL queries?
 
 The JSON objects will, for now, be stored in an ASCII file.  Starting the database will parse the file and load all of the items into memory.  Checkpointing or exiting will rewrite the ASCII file.
 
@@ -25,3 +25,5 @@ The JSON objects will, for now, be stored in an ASCII file.  Starting the databa
 1. Each "record" in the database will be stored as a single ASCII string
 
 1. We should probably include an update count along with the unique ID.
+
+1. Each "table" in a conventional database sense will be a separate file.
