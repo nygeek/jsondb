@@ -1,0 +1,6 @@
+# JSON DB Sample - Question Classifications
+# $Id$
+#
+# Note that the "ages" lists are the so-called 'normal' ages for the
+# listed grade
+{"grades":[{"one":{"ages":["5","6","7"]}},{"two":{"ages":["6","7","8"]}},{"three":{"ages":["7","8","9"]}},{"four":{"ages":["8","9","10"]}},{"five":{"ages":["9","10","11"]}},{"six":{"ages":["10","11","12"]}},{"seven":{"ages":["11","12","13"]}},{"eight":{"ages":["12","13","14"]}},{"nine":{"ages":["13","14","15"]}},{"ten":{"ages":["14","15","16"]}},{"eleven":{"ages":["15","16","17"]}},{"twelve":{"ages":["16","17","18"]}}]}

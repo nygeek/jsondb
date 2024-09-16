@@ -33,6 +33,8 @@ SOURCE = \
 	 ${PYTHON_SOURCE} \
 	 Makefile \
 	 sample_1.jdb \
+	 sample_2.jdb \
+	 .gitattributes \
 	 .gitignore \
 	 README.md
 
