@@ -26,6 +26,7 @@ help:
 	echo "DATE: " ${DATE}
 
 PYTHON_SOURCE = \
+	jsondb_editor.py \
 	jsondb_loader.py \
 	trace_debug.py
 
@@ -56,7 +57,7 @@ pylint:
 lint: pylint
 
 test:
-	${PYTHON} jsondb_loader.py sample_1.jdb
+	${PYTHON} jsondb_loader.py sample_1.jdb sample_2.jdb
 
 listings:\
 	listing-trace_debug.pdf
