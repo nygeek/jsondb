@@ -5,6 +5,21 @@
     object.  A separate class, jsondb-rewriter, will create a stable
     copy.
 
+    Each record is a dictionary with a single key.  The key is what
+    an SQL database would call the TABLE name.
+
+    For now we will ASSUME that each TABLE will be stored in a
+    single ASCII file, with each record a separate line.
+    [ToDo: make it possible for a record to span multiple lines.]
+
+    Each record is be a dictionary with a single key, namely the
+    TABLE name.
+
+    The value accessed by the TABLE name will be another dictionary.
+    The keys of this dictionary will be the FIELD names of the
+    TABLE.  One special key, 'id', will contain the unique ID for
+    the row.
+
     Started 2024-09-25
 
     Copyright (C) 2024 Marc Donner
@@ -40,27 +55,10 @@ class JDB_Editor:
         """List the IDs of the records in self.jdb."""
         index = 0
         for _record in self.jdb:
-            #
-            # Each record is a dictionary with a single key.  The key
-            # is what an SQL database would call the TABLE name.
-            #
-            # For now we will ASSUME that each TABLE will be stored
-            # in a single ASCII file, with each record a separate
-            # line.  [ToDo: make it possible for a record to span
-            # multiple lines.]
-            #
-            # Each record is be a dictionary with a single key, namely
-            # the TABLE name.
-            #
-            # The value accessed by the TABLE name will be another
-            # dictionary.  The keys of this dictionary will be the
-            # FIELD names of the TABLE.  One special key, 'id', will
-            # contain the unique ID for the row.
-            #
             for category in _record.keys():
-                print(f"[{index}]: {category}")
                 unique_id = _record[category]['id']
-                print(f"  id: {unique_id}")
+                print(f"[{index}]: {category}:{unique_id}")
+                index += 1
 
 
     def dump(self):
